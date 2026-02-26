@@ -1,6 +1,6 @@
 cask "markedit-in-context" do
-  version "0.1.0"
-  sha256 "b973bb4353cec9f3e2ca8ebcb3f24bcecfb222eb31a7e963b731cb858cecaceb"
+  version "0.2.0"
+  sha256 "8a6b5425eb84735e0e74379acdf0a054436674083220742d8c295929ada9cf94"
 
   url "https://github.com/wundram/MarkEdit-InContext/releases/download/v#{version}/MarkEdit-InContext-#{version}.zip"
   name "MarkEdit InContext"
@@ -12,5 +12,8 @@ cask "markedit-in-context" do
   app "MarkEdit InContext.app"
   binary "#{appdir}/MarkEdit InContext.app/Contents/Resources/eic", target: "eic"
 
-  zap trash: "~/Library/Preferences/dev.wundram.eic.plist"
+  zap trash: [
+    "~/Library/Preferences/dev.wundram.eic.plist",
+    "~/.eic",
+  ]
 end
